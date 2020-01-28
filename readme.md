@@ -20,11 +20,11 @@ Port is 3333
 
 Routes:
 
-POST /projects
-POST /projects/:id/tasks
-GET /projects
-PUT /projects/:id
-DELETE /projects/:id
+POST /projects  
+POST /projects/:id/tasks  
+GET /projects  
+PUT /projects/:id  
+DELETE /projects/:id  
 
 
 ## License
