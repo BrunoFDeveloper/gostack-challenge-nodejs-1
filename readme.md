@@ -1,6 +1,6 @@
 # Challenge from GoStack Bootcamp
 
-Foobar is a Python library for dealing with word pluralization.
+This challenge is for make a Server with express with some rules.
 
 ## Installation
 
