@@ -15,7 +15,7 @@ const checkProjectId = (req, res, next) => {
 routes.post('/projects', (req, resp) => {
   const { id, title } = req.body;
   projects.push({ id, title, tasks: [] });
-  resp.json({ message: 'Projeto cadastrado com sucesso!' });
+  return resp.json({ message: 'Projeto cadastrado com sucesso!' });
 });
 
 routes.post('/projects/:id/tasks', checkProjectId, (req, resp) => {
@@ -28,11 +28,11 @@ routes.post('/projects/:id/tasks', checkProjectId, (req, resp) => {
       : project
   );
 
-  resp.json({ message: 'Projeto cadastrado com sucesso!' });
+  return resp.json({ message: 'Projeto cadastrado com sucesso!' });
 });
 
 routes.get('/projects', (req, resp) => {
-  resp.json(projects);
+  return resp.json(projects);
 });
 
 routes.put('/projects/:id', checkProjectId, (req, resp) => {
@@ -43,7 +43,7 @@ routes.put('/projects/:id', checkProjectId, (req, resp) => {
     project.id === id ? { ...project, title } : project
   );
 
-  resp.json(projects);
+  return resp.json(projects);
 });
 
 routes.delete('/projects/:id', checkProjectId, (req, resp) => {
@@ -51,7 +51,7 @@ routes.delete('/projects/:id', checkProjectId, (req, resp) => {
 
   projects = projects.filter(project => project.id !== id);
 
-  resp.json(projects);
+  return resp.json(projects);
 });
 
 module.exports = routes;
