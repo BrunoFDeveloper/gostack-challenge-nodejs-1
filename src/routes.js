@@ -6,9 +6,10 @@ let projects = [];
 const checkProjectId = (req, res, next) => {
   const { id } = req.params;
   const findId = projects.find(project => project.id === id);
-  if (!findId) return res.json({ message: 'Esse id de projeto não existe!' });
+  if (!findId)
+    return res.status(400).json({ message: 'Esse id de projeto não existe!' });
 
-  next();
+  return next();
 };
 
 routes.post('/projects', (req, resp) => {
